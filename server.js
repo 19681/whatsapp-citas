@@ -4,7 +4,9 @@ import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+import baileys from '@whiskeysockets/baileys';
+const makeWASocket = baileys.default || baileys;
+const { useMultiFileAuthState, DisconnectReason } = baileys;
 import makeWASocket, { useMultiFileAuthState, DisconnectReason } from '@whiskeysockets/baileys';
 import express from 'express';
 import cron from 'node-cron';
